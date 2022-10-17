@@ -30,10 +30,12 @@ public class BoatController {
         return boatService.save(boat);
     }
     @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
     public Boat update(@RequestBody Boat boat){
         return boatService.update(boat);
     }
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int id){
         return boatService.delete(id);
     }

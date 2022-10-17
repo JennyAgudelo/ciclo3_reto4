@@ -30,10 +30,12 @@ public class ReservationController {
         return reservationService.save(reservation);
     }
     @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
     public Reservation update(@RequestBody Reservation reservation){
         return reservationService.update(reservation);
     }
     @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("id") int id){
         return reservationService.delete(id);
     }
